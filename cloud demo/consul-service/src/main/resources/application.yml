@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    user:
+      url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+    customer:
+      url: jdbc:mysql://localhost:3306/test2?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  application:
+    name: consul-service
+  jpa:
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
